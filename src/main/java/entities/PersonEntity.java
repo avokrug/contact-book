@@ -11,16 +11,16 @@ public class PersonEntity {
     @GeneratedValue
     private int id;
 
-    @Column(name = "first_name", nullable = true, length = 80)
+    @Column(name = "first_name", nullable = false, length = 80)
     private String firstName;
 
-    @Column(name = "last_name", nullable = true, length = 80)
+    @Column(name = "last_name", nullable = false, length = 80)
     private String lastName;
 
-    @Column(name = "middle_name", nullable = true, length = 80)
+    @Column(name = "middle_name", nullable = false, length = 80)
     private String middleName;
 
-    @Column(name = "position", nullable = true, length = 255)
+    @Column(name = "position", nullable = false, length = 255)
     private String position;
 
     @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)

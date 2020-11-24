@@ -12,15 +12,15 @@ public class ContactsEntity {
     @GeneratedValue
     private int id;
 
-    @Column(name = "number", nullable = true, length = 20)
+    @Column(name = "number", nullable = false, length = 20)
     private String number;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn (name="person_id", referencedColumnName = "id")
+    @JoinColumn (name="person_id", referencedColumnName = "id", nullable = false)
     private PersonEntity person;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn (name="contact_type_id", referencedColumnName = "id")
+    @JoinColumn (name="contact_type_id", referencedColumnName = "id", nullable = false)
     private ContactTypeEntity contactType;
 
     public ContactsEntity() {

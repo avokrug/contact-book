@@ -12,7 +12,7 @@ public class ContactTypeEntity {
     @GeneratedValue
     private int id;
 
-    @Column(name = "type", nullable = true, length = 255)
+    @Column(name = "type", nullable = false, length = 255)
     private String type;
 
     @OneToOne(mappedBy = "contactType", cascade = CascadeType.ALL)
